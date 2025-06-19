@@ -1,0 +1,137 @@
+@prefix gr: <https://gitlab.dit.htwk-leipzig.de/minh_huy.nguyen/goodread-book-review> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+xsd:date rdf:type rdfs:Datatype .
+xsd:integer rdf:type rdfs:Datatype .
+xsd:decimal rdf:type rdfs:Datatype .
+xsd:string rdf:type rdfs:Datatype .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+gr:writtenBy rdf:type owl:ObjectProperty ;
+               rdfs:domain gr:Book ;
+               rdfs:range gr:Author ;
+               rdfs:comment "The Author of a book."@en ;
+               rdfs:label "Author"@en .
+
+gr:publishedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain gr:Book ;
+             rdfs:range gr:Publisher ;
+             rdfs:comment "The publisher of a book."@en ;
+             rdfs:label "Publisher"@en .
+
+gr:hasISBN rdf:type owl:ObjectProperty ;
+             rdfs:domain gr:Book ;
+             rdfs:range gr:ISBN ;
+             rdfs:comment "The ISBN of each book."@en ;
+             rdfs:label "ISBN"@en .
+
+gr:hasReview rdf:type owl:ObjectProperty ;
+             rdfs:domain gr:Book ;
+             rdfs:range gr:Review ;
+             rdfs:comment "The review about a book."@en ;
+             rdfs:label "Review"@en .
+
+#################################################################
+#    Data properties
+#################################################################
+
+gr:title rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Book ;
+            rdfs:range xsd:string ;
+            rdfs:comment "The title of a book."@en ;
+            rdfs:label "Book Title"@en .
+
+gr:langCode rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Book ;
+            rdfs:range xsd:string ;
+            rdfs:comment "The language code of a book."@en ;
+            rdfs:label "Language Code"@en .
+
+gr:publishedDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Book ;
+            rdfs:range xsd:date ;
+            rdfs:comment "The published date of a book."@en ;
+            rdfs:label "Published Date"@en .
+            
+gr:pagesNum rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Book ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The number of pages of a book."@en ;
+            rdfs:label "Number of Pages"@en .
+
+gr:ISBN13 rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:ISBN ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "Book ISBN that has the length of 13."@en ;
+            rdfs:label "ISBN 13"@en .
+
+gr:ISBN11 rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:ISBN ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Book ISBN that has the length of 11."@en ;
+            rdfs:label "ISBN 11"@en .
+
+gr:avgRating rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Review ;
+            rdfs:range xsd:decimal ;
+            rdfs:comment "The average rating of a book."@en ;
+            rdfs:label "Average Rating"@en .
+
+gr:ratingCount rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Review ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The number of rating of a book."@en ;
+            rdfs:label "Rating Count"@en .
+
+gr:textCount rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Review ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The number of text of a review."@en ;
+            rdfs:label "Review Text Count"@en .
+
+gr:wikiLink rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Author ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Wikipedia link of the author."@en ;
+            rdfs:label "Wikipedia Link"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+gr:Book rdf:type owl:Class ;
+          rdfs:comment "A book."@en ;
+          rdfs:label "Book"@en .
+
+gr:Author rdf:type owl:Class ;
+       rdfs:comment "An author."@en ;
+       rdfs:label "Author"@en .
+
+gr:Publisher rdf:type owl:Class ;
+          rdfs:comment "A publisher."@en ;
+          rdfs:label "Publisher"@en .
+
+gr:ISBN rdf:type owl:Class ;
+       rdfs:comment "An ISBN."@en ;
+       rdfs:label "ISBN"@en .
+
+gr:Review rdf:type owl:Class ;
+          rdfs:comment "A Review."@en ;
+          rdfs:label "Review"@en .
+
+
+
