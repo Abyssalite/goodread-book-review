@@ -1,12 +1,39 @@
-@prefix gr: <https://gitlab.dit.htwk-leipzig.de/minh_huy.nguyen/goodread-book-review> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix gr: <http://gr.aksw.org/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@base <http://f1.aksw.org/ontology#> .
+
+<http://gr.aksw.org/ontology#>  rdf:type owl:Ontology .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
 
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
 
 #################################################################
 #    Datatypes
@@ -132,6 +159,3 @@ gr:ISBN rdf:type owl:Class ;
 gr:Review rdf:type owl:Class ;
           rdfs:comment "A Review."@en ;
           rdfs:label "Review"@en .
-
-
-
