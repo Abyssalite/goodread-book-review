@@ -1568,7 +1568,7 @@ bookID,title,authors,average_rating,isbn,isbn13,language_code,num_pages,ratings_
 5375,The Dragon's Eye (Erec Rex #1),Kaza Kingsley/Melvyn Grant,4.00,0978655567,9780978655563,eng,341,59,8,10/1/2006,Firelight Press
 5376,Dragon's Eye (Stonefort #1),James A. Hetley,3.43,0441013724,9780441013722,en-US,368,133,16,10/31/2006,Ace
 5396,Dragon's Eye,Christopher Stasheff/William R. Forstchen/Nick DiChario/S.N. Lewitt/Bill Fawcett/Mike Resnick/Mickey Zucker Reichert/S.M. Stirling/Diane Duane/Jody Lynn Nye/Roland J. Green/Teresa Patterson/Judith R. Conly,3.51,0671876090,9780671876098,en-GB,279,41,7,7/1/1994,Baen Books
-5402,"Stand Back " Said the Elephant "I'm Going to Sneeze!",Patricia Thomas/Wallace Tripp,4.39,0688093388,9780688093389,eng,32,1004,130,4/23/1990,William Morrow & Company Inc.
+5402,""Stand Back " Said the Elephant "I'm Going to Sneeze!"",Patricia Thomas/Wallace Tripp,4.39,0688093388,9780688093389,eng,32,1004,130,4/23/1990,William Morrow & Company Inc.
 5404,Here I Stand: A Life of Martin Luther,Roland H. Bainton,4.08,0452011469,9780452011465,eng,336,2841,224,4/1/1995,Plume Books
 5412,The Stand: Das letzte Gefecht,Stephen King/Joachim Körber,4.34,3404134117,9783404134113,ger,1227,256,16,9/1/2003,Bastei Lübbe
 5413,'Salem's Lot,Stephen King/Jerry N. Uelsmann,4.25,0385516487,9780385516488,eng,594,84123,571,11/1/2005,Doubleday
@@ -4511,7 +4511,7 @@ bookID,title,authors,average_rating,isbn,isbn13,language_code,num_pages,ratings_
 16268,Back to Barbary Lane: The Tales of the City Omnibus (Tales of the City #4-6),Armistead Maupin,4.44,0060166495,9780060166496,eng,720,514,11,11/26/1991,Harper
 16271,The Intuitionist,Colson Whitehead,3.68,0385493002,9780385493000,eng,255,7473,903,1/4/1999,Anchor Books
 16276,John Henry Days,Colson Whitehead,3.65,0385498209,9780385498203,eng,400,1940,186,5/14/2002,Anchor
-16280,"Why Are All The Black Kids Sitting Together in the Cafeteria?": A Psychologist Explains the Development of Racial Identity,Beverly Daniel Tatum,4.21,0465083617,9780465083619,en-US,320,9845,703,1/17/2003,Basic Books
+16280,""Why Are All The Black Kids Sitting Together in the Cafeteria?": A Psychologist Explains the Development of Racial Identity",Beverly Daniel Tatum,4.21,0465083617,9780465083619,en-US,320,9845,703,1/17/2003,Basic Books
 16285,The Custard Kid (Black Cats),Terry Deary,4.40,0713659890,9780713659894,eng,62,5,0,10/31/2001,A & C Black (Childrens books)
 16286,The Magus,John Fowles,4.05,0316296198,9780316296199,eng,656,38247,1915,1/4/2001,Back Bay Books
 16291,The Magus of Freemasonry: The Mysterious Life of Elias Ashmole—Scientist Alchemist and Founder of the Royal Society,Tobias Churton,4.10,1594771227,9781594771224,eng,303,28,5,6/27/2006,Inner Traditions
@@ -6150,7 +6150,7 @@ bookID,title,authors,average_rating,isbn,isbn13,language_code,num_pages,ratings_
 23066,How to Travel with a Salmon and Other Essays,Umberto Eco/William Weaver,3.85,0151001367,9780151001361,eng,248,3532,153,12/1/1994,Houghton Mifflin
 23080,Le Nom de la rose,Umberto Eco/Jean-Noël Schifano,4.12,2253033138,9782253033134,fre,755,745,49,11/2/1983,Le Livre de Poche
 23114,Os libros arden mal,Manuel Rivas,3.36,849782461X,9788497824613,glg,741,36,2,6/24/2006,Edicións Xerais de Galicia S.A.
-23158,The Age of Access: The New Culture of Hypercapitalism Where All of Life Is a Paid-For Experience,Jeremy Rifkin/Ralph Fowler,3.82,1585420824,9781585420827,eng,320,228,12,3/5/2001,"Tarcher"
+23158,The Age of Access: The New Culture of Hypercapitalism Where All of Life Is a Paid-For Experience,Jeremy Rifkin/Ralph Fowler,3.82,1585420824,9781585420827,eng,320,228,12,3/5/2001,Tarcher
 23183,The Book of Questions,Pablo Neruda/William O'Daly,4.04,1556591608,9781556591600,eng,96,2180,224,4/1/2001,Copper Canyon Press
 23186,Bugs for Lunch/Insectos para el almuerzo,Margery Facklam/Sylvia Long/Liliana Valenzuela,3.78,1570915067,9781570915062,spa,32,4,1,7/1/2002,Charlesbridge
 23194,My Story as told by Water: Confessions Druidic Rants Reflections Bird-watchings Fish-stalkings Visions Songs and Prayers Refracting Light from Living Rivers in the Age of the Industrial Dark,David James Duncan,4.10,1578050499,9781578050499,eng,304,679,53,7/17/2001,Sierra Club Books
@@ -9964,7 +9964,7 @@ bookID,title,authors,average_rating,isbn,isbn13,language_code,num_pages,ratings_
 40139,Gone Bamboo,Anthony Bourdain,3.48,1841953679,9781841953670,eng,286,1066,74,5/1/2002,Canongate Books
 40143,The Family That Couldn't Sleep: A Medical Mystery,D.T. Max,3.91,081297252X,9780812972528,eng,299,237,48,9/11/2007,Random House Trade Paperbacks
 40145,Dear Genius: The Letters of Ursula Nordstrom,Ursula Nordstrom/Leonard S. Marcus/Maurice Sendak,4.40,0064462358,9780064462358,eng,406,533,112,3/31/2000,HarperCollins
-40146,"Dear Genius...": A Memoir of My Life with Truman Capote,Jack Dunphy,3.33,0070183171,9780070183179,eng,275,36,6,12/1/1987,McGraw-Hill Companies
+40146,""Dear Genius...": A Memoir of My Life with Truman Capote",Jack Dunphy,3.33,0070183171,9780070183179,eng,275,36,6,12/1/1987,McGraw-Hill Companies
 40152,Only Revolutions,Mark Z. Danielewski,3.21,0375421769,9780375421761,eng,360,4791,443,9/12/2006,Pantheon Books
 40153,The Whalestoe Letters,Mark Z. Danielewski,4.04,0375714413,9780375714412,eng,83,2112,96,10/10/2000,Pantheon
 40155,La Maison des feuilles,Mark Z. Danielewski/Christophe Claro,4.10,2207252000,9782207252000,fre,978,79,13,8/29/2002,Denoël
@@ -10867,7 +10867,7 @@ bookID,title,authors,average_rating,isbn,isbn13,language_code,num_pages,ratings_
 44408,Becoming a Contagious Christian,Bill Hybels/Mark Mittelberg,3.92,0310210089,9780310210085,eng,224,1315,50,4/20/1996,Zondervan
 44433,Courageous Faith Through the Year,Bill Hybels/Keri Wyatt Kent,3.50,0830832947,9780830832941,eng,327,0,0,7/1/2004,IVP Books
 44436,Becoming a Contagious Christian Leader's Guide: Communicating Your Faith in a Style That Fits You,Mark Mittelberg/Lee Strobel,3.75,0310257867,9780310257868,eng,299,8,1,2/12/2007,Zondervan
-44439,"A" Is for Abductive : The Language of the Emerging Church,Leonard Sweet/Brian D. McLaren,3.14,0310243564,9780310243564,en-US,338,49,3,12/24/2002,Zondervan
+44439,""A" Is for Abductive : The Language of the Emerging Church",Leonard Sweet/Brian D. McLaren,3.14,0310243564,9780310243564,en-US,338,49,3,12/24/2002,Zondervan
 44442,The Church on the Other Side: Doing Ministry in the Postmodern Matrix,Brian D. McLaren,3.58,0310252199,9780310252191,eng,224,205,10,1/9/2003,Zondervan
 44446,Great Russian Short Stories,Paul Negri/Alexander Pushkin/Maxim Gorky/Aleksandr Ivanovich Kuprin/Leonid Andreyev/Nikolai Gogol/Ivan Turgenev/Fyodor Dostoyevsky/Leo Tolstoy/Nicholay Leskov/Vsevolod Garshin/Anton Chekhov/Theodor Sologub,4.02,048642992X,9780486429922,eng,208,162,20,7/29/2003,Dover Publications
 44450,The Portable Dorothy Parker,Dorothy Parker/Marion Meade/Seth,4.34,0143039539,9780143039532,eng,626,1447,199,3/28/2006,Penguin Books
