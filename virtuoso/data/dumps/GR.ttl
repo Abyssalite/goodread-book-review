@@ -1,0 +1,163 @@
+@prefix gr: <http://gr.aksw.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@base <http://gr.aksw.org/ontology#> .
+
+<http://gr.aksw.org/ontology#>  rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+xsd:date rdf:type rdfs:Datatype .
+xsd:integer rdf:type rdfs:Datatype .
+xsd:decimal rdf:type rdfs:Datatype .
+xsd:string rdf:type rdfs:Datatype .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+gr:writtenBy rdf:type owl:ObjectProperty ;
+               rdfs:domain gr:Book ;
+               rdfs:range gr:Author ;
+               rdfs:comment "The Author of a book."@en ;
+               rdfs:label "writtenBy"@en .
+
+gr:hasISBN rdf:type owl:ObjectProperty ;
+             rdfs:domain gr:Book ;
+             rdfs:range gr:ISBN ;
+             rdfs:comment "The ISBN of each book."@en ;
+             rdfs:label "hasISBN"@en .
+
+gr:hasReview rdf:type owl:ObjectProperty ;
+             rdfs:domain gr:Book ;
+             rdfs:range gr:Review ;
+             rdfs:comment "The review about a book."@en ;
+             rdfs:label "hasReview"@en .
+
+#################################################################
+#    Data properties
+#################################################################
+
+gr:title rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Book ;
+            rdfs:range xsd:string ;
+            rdfs:comment "The title of a book."@en ;
+            rdfs:label "title"@en .
+
+gr:publisher rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Book ;
+            rdfs:range xsd:string ;
+            rdfs:comment "The publisher of a book."@en ;
+            rdfs:label "publisher"@en .
+
+gr:language_code rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Book ;
+            rdfs:range xsd:string ;
+            rdfs:comment "The language code of a book."@en ;
+            rdfs:label "language_code"@en .
+
+gr:publication_date rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Book ;
+            rdfs:range xsd:date ;
+            rdfs:comment "The published date of a book."@en ;
+            rdfs:label "publication_date"@en .
+            
+gr:num_pages rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Book ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The number of pages of a book."@en ;
+            rdfs:label "num_pages"@en .
+
+gr:isbn13 rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:ISBN ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "Book ISBN that has the length of 13."@en ;
+            rdfs:label "isbn13"@en .
+
+gr:isbn11 rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:ISBN ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Book ISBN that has the length of 11."@en ;
+            rdfs:label "isbn11"@en .
+
+gr:average_rating rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Review ;
+            rdfs:range xsd:decimal ;
+            rdfs:comment "The average rating of a book."@en ;
+            rdfs:label "average_rating"@en .
+
+gr:ratings_count rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Review ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The number of rating of a book."@en ;
+            rdfs:label "ratings_count"@en .
+
+gr:text_reviews_count rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Review ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The number of text of a review."@en ;
+            rdfs:label "text_reviews_count"@en .
+
+gr:wikipedia_url rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Author ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Wikipedia link of the author."@en ;
+            rdfs:label "wikipedia_url"@en .
+
+gr:wikidata_url rdf:type owl:DatatypeProperty ;
+            rdfs:domain gr:Author ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Wikidata link of the author."@en ;
+            rdfs:label "wikidata_url"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+gr:Book rdf:type owl:Class ;
+          rdfs:comment "A book."@en ;
+          rdfs:label "Book"@en .
+
+gr:Author rdf:type owl:Class ;
+       rdfs:comment "An author."@en ;
+       rdfs:label "Author"@en .
+
+gr:ISBN rdf:type owl:Class ;
+       rdfs:comment "An ISBN."@en ;
+       rdfs:label "ISBN"@en .
+
+gr:Review rdf:type owl:Class ;
+          rdfs:comment "A Review."@en ;
+          rdfs:label "Review"@en .
