@@ -1,0 +1,157 @@
+PREFIX gr: <http://gr.aksw.org/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+## 1. Books with title and authors ##
+SELECT ?book ?title ?author
+WHERE {
+  ?book gr:title ?title ;
+        gr:writtenBy ?author .
+}
+
+## 2. Books published by a specific publisher (case-insensitive match) ## 
+SELECT DISTINCT ?book ?title
+WHERE {
+  ?book a gr:Book .
+  ?book gr:publisher ?pub .
+  FILTER(lcase(str(?pub)) = "penguin books")
+  OPTIONAL { ?book gr:title ?title . }
+}
+
+## 3.  Books written in English (language_code is a literal on Book) ##
+SELECT DISTINCT ?book ?title
+WHERE {
+  ?book a gr:Book .
+  ?book gr:language_code ?lang .
+  FILTER(lcase(str(?lang)) = "eng")
+  OPTIONAL { ?book gr:title ?title . }
+}
+
+## 4. All authors and the books they wrote ##
+SELECT DISTINCT ?author ?authorName ?book ?title
+WHERE {
+  ?author a gr:Author .
+  OPTIONAL { ?author gr:title ?authorName . }
+  ?book a gr:Book .
+  ?book gr:writtenBy ?author .
+  OPTIONAL { ?book gr:title ?title . }
+}
+
+## 5. Authors who wrote books in multiple languages ##
+SELECT DISTINCT ?author ?authorName (COUNT(DISTINCT ?language) AS ?langCount)
+WHERE {
+  ?author a gr:Author .
+  OPTIONAL { ?author gr:title ?authorName . }
+  ?book a gr:Book ;
+        gr:writtenBy ?author ;
+        gr:language_code ?language .
+}
+GROUP BY ?author ?authorName
+HAVING (COUNT(DISTINCT ?language) > 1)
+ORDER BY DESC(?langCount) 
+
+Authors with the earliest published book
+
+## 6. SELECT ?author ?authorName (MIN(?pubDate) AS ?earliestPubDate) ##
+WHERE {
+  ?author a gr:Author .
+  OPTIONAL { ?author gr:title ?authorName . }
+  ?book a gr:Book ;
+        gr:writtenBy ?author ;
+        gr:publication_date ?pubDate .
+}
+GROUP BY ?author ?authorName
+ORDER BY ?earliestPubDate 
+
+## 7. Find books by authors who have written at least 3 books ##
+SELECT ?author ?authorName ?book ?title
+WHERE {
+  {
+    SELECT ?author
+    WHERE {
+      ?book a gr:Book ;
+            gr:writtenBy ?author .
+    }
+    GROUP BY ?author
+    HAVING (COUNT(DISTINCT ?book) >= 3)
+  }
+  ?author a gr:Author .
+  OPTIONAL { ?author gr:title ?authorName . }
+  ?book a gr:Book ;
+        gr:writtenBy ?author .
+  OPTIONAL { ?book gr:title ?title . }
+}
+ORDER BY ?authorName
+
+## 8. Find books that share the same publisher but are in different languages ##
+SELECT DISTINCT ?publisher ?book1 ?title1 ?lang1 ?book2 ?title2 ?lang2
+WHERE {
+  ?book1 a gr:Book ;
+         gr:publisher ?publisher ;
+         gr:language_code ?lang1 .
+  ?book2 a gr:Book ;
+         gr:publisher ?publisher ;
+         gr:language_code ?lang2 .
+  FILTER(?book1 != ?book2 && ?lang1 != ?lang2)
+  OPTIONAL { ?book1 gr:title ?title1 . }
+  OPTIONAL { ?book2 gr:title ?title2 . }
+}
+
+## 9. Authors who have never published a book in English ##
+SELECT DISTINCT ?author ?authorName
+WHERE {
+  ?author a gr:Author .
+  FILTER NOT EXISTS {
+    ?book a gr:Book ;
+          gr:writtenBy ?author ;
+          gr:language_code "en" .
+  }
+  OPTIONAL { ?author gr:title ?authorName . }
+} 
+
+## 10. Authors ranked by the highest number of books published in the same year ##
+SELECT ?author ?authorName ?year (COUNT(?book) AS ?bookCount)
+WHERE {
+  ?book a gr:Book ;
+        gr:writtenBy ?author ;
+        gr:publication_date ?pubDate .
+  BIND(SUBSTR(STR(?pubDate), 1, 4) AS ?year)
+  OPTIONAL { ?author gr:title ?authorName . }
+}
+GROUP BY ?author ?authorName ?year
+ORDER BY DESC(?bookCount)
+
+## 11. Books that either have ISBN-13 starting with '9780' OR were published after 2015 ##
+SELECT DISTINCT ?book ?title ?isbn13 ?pubDate
+WHERE {
+  ?book a gr:Book .
+  OPTIONAL { ?book gr:title ?title . }
+  OPTIONAL { ?book (gr:hasISBN/gr:isbn13) ?isbn13 . }
+  OPTIONAL { ?book gr:publication_date ?pubDate . }
+  FILTER(
+    (BOUND(?isbn13) && STRSTARTS(STR(?isbn13), "9780"))
+    || (?pubDate > "2015-01-01"^^xsd:date)
+  )
+}
+
+## 12. Authors and their earliest published book title ##
+SELECT ?author ?authorName ?book ?title ?earliestDate
+WHERE {
+  {
+    SELECT ?author (MIN(?pubDate) AS ?earliestDate)
+    WHERE {
+      ?book a gr:Book ;
+            gr:writtenBy ?author ;
+            gr:publication_date ?pubDate .
+    }
+    GROUP BY ?author
+  }
+  ?book a gr:Book ;
+        gr:writtenBy ?author ;
+        gr:publication_date ?earliestDate .
+  OPTIONAL { ?book gr:title ?title . }
+  OPTIONAL { ?author gr:title ?authorName . }
+}
+ORDER BY ?authorName
