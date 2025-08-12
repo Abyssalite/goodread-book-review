@@ -1,0 +1,56 @@
+
+		Tue Aug 12 2025
+18:40:38 OpenLink Virtuoso Universal Server
+18:40:38 Version 07.20.3233-pthreads for Linux as of Jun 30 2021
+18:40:38 uses OpenSSL 1.0.2n  7 Dec 2017
+18:40:38 uses parts of PCRE, Html Tidy
+18:40:38 SQL Optimizer enabled (max 1000 layouts)
+18:40:38 Compiler unit is timed at 0.000710 msec
+18:40:43 Checkpoint started
+18:40:43 Roll forward started
+18:40:43 Roll forward complete
+18:40:43 Checkpoint started
+18:40:43 Checkpoint finished, log reused
+18:40:43 Checkpoint started
+18:40:43 Checkpoint finished, log reused
+18:40:45 Checkpoint started
+18:40:45 Checkpoint finished, log reused
+18:40:45 Checkpoint started
+18:40:45 Checkpoint finished, log reused
+18:40:46 Checkpoint started
+18:40:46 Checkpoint finished, log reused
+18:40:46 PL LOG: Installing Virtuoso Conductor version 1.00.8823 (DAV)
+18:40:46 PL LOG: Installing with dependencies Virtuoso Conductor version 1.00.8823/2021-06-30 12:30 (DAV)
+18:40:46 Checkpoint started
+18:40:46 Checkpoint finished, log reused
+18:40:51 Checkpoint started
+18:40:51 Checkpoint finished, log reused
+18:40:51 PL LOG: Installation with dependencies complete
+18:40:51 Checkpoint started
+18:40:51 Checkpoint finished, log reused
+18:40:51 HTTP/WebDAV server online at 27015
+18:40:51 Server online at 1111 (pid 19)
+18:40:51 Server received signal 15
+18:40:51 Initiating quick shutdown
+18:40:51 Server shutdown complete
+
+		Tue Aug 12 2025
+18:40:51 OpenLink Virtuoso Universal Server
+18:40:51 Version 07.20.3233-pthreads for Linux as of Jun 30 2021
+18:40:51 uses OpenSSL 1.0.2n  7 Dec 2017
+18:40:51 uses parts of PCRE, Html Tidy
+18:40:51 Database version 3126
+18:40:51 SQL Optimizer enabled (max 1000 layouts)
+18:40:52 Compiler unit is timed at 0.000194 msec
+18:40:53 Roll forward started
+18:40:53     9 transactions, 2071 bytes replayed (100 %)
+18:40:53 Roll forward complete
+18:40:54 Checkpoint started
+18:40:54 Checkpoint finished, log reused
+18:40:54 HTTP/WebDAV server online at 8890
+18:40:54 Server online at 1111 (pid 1)
+18:42:47 Incorrect login for dba from IP [127.0.0.1]
+18:43:36 PL LOG: Loader started
+18:43:39 PL LOG: No more files to load. Loader has finished,
+18:44:08 Checkpoint started
+18:44:08 Checkpoint finished, log reused

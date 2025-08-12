@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.9" 
 
 services:
   virtuoso:
@@ -8,9 +8,9 @@ services:
       DBA_PASSWORD: "123456"
       SPARQL_UPDATE: "true"
       DEFAULT_GRAPH: "http://gr.aksw.org/"
-  volumes:
-    - ./virtuoso/data:/data
-    - ./virtuoso/scripts:/opt/virtuoso-opensource/initdb.d
-  ports:
-    - "8898:8890"
-    - "1118:1111"
+    volumes:
+      - ./virtuoso/data:/data
+      - ./virtuoso/scripts:/opt/virtuoso-opensource/initdb.d
+    ports:
+      - "8898:8890"
+      - "1118:1111"
