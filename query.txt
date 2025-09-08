@@ -52,9 +52,9 @@ GROUP BY ?author ?authorName
 HAVING (COUNT(DISTINCT ?language) > 1)
 ORDER BY DESC(?langCount) 
 
-Authors with the earliest published book
+## 6.Authors with the earliest published book ##
 
-## 6. SELECT ?author ?authorName (MIN(?pubDate) AS ?earliestPubDate) ##
+SELECT ?author ?authorName (MIN(?pubDate) AS ?earliestPubDate) 
 WHERE {
   ?author a gr:Author .
   OPTIONAL { ?author gr:title ?authorName . }
@@ -155,3 +155,49 @@ WHERE {
   OPTIONAL { ?author gr:title ?authorName . }
 }
 ORDER BY ?authorName
+
+## 13 Get all books with their reviews ##
+SELECT ?book ?title ?review
+WHERE {
+  ?book a gr:Book ;
+        gr:title ?title ;
+        gr:hasReview ?review .
+}
+ORDER BY DESC(xsd:decimal(?review))
+
+
+## 14 Find the top 5 highest-rated books ##
+SELECT ?book ?title ?review
+WHERE {
+  ?book a gr:Book ;
+        gr:title ?title ;
+        gr:hasReview ?review .
+}
+ORDER BY DESC(xsd:decimal(?review))
+LIMIT 5
+
+
+## 15 Authors and their highest-rated book ##
+SELECT ?author ?book ?title ?review
+WHERE {
+  ?book a gr:Book ;
+        gr:title ?title ;
+        gr:writtenBy ?author ;
+        gr:hasReview ?review .
+}
+ORDER BY ?author DESC(xsd:decimal(?review))
+
+## 16 Avarage rating and total ratings of every book
+PREFIX gr: <http://gr.aksw.org/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?book ?title (xsd:float(?avg) AS ?avgRating) (SUM(xsd:integer(?count)) AS ?totalRatings)
+WHERE {
+  ?book a gr:Book ;
+        gr:title ?title ;
+        gr:hasReview ?review .
+  ?review gr:avgRating ?avg ;
+          gr:ratingCount ?count .
+}
+GROUP BY ?book ?title ?avg
+ORDER BY DESC(?totalRatings)
